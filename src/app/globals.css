@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-fraunces: 'Fraunces', Georgia, serif;
+  --font-work-sans: 'Work Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif text-ink;
+  }
+  ::selection {
+    @apply bg-green text-paper;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-m px-5 py-3 text-sm font-semibold transition-all duration-200;
+  }
+  .btn-primary {
+    @apply bg-green text-paper hover:bg-green-dark shadow-vedika;
+  }
+  .btn-gold {
+    @apply bg-gold text-paper hover:brightness-95;
+  }
+  .btn-outline {
+    @apply border border-line bg-paper text-ink hover:border-green hover:text-green;
+  }
+  .btn-ghost {
+    @apply text-ink hover:text-green;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-s px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide;
+  }
+  .badge-new { @apply bg-gold-tint text-gold; }
+  .badge-sale { @apply bg-red/10 text-red; }
+  .badge-best { @apply bg-green-tint text-green; }
+
+  .card {
+    @apply rounded-l border border-line bg-paper;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-green;
+  }
+
+  .input {
+    @apply w-full rounded-m border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-green focus:ring-2 focus:ring-green/20;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-inksoft;
+  }
+
+  .dosha-pill {
+    @apply inline-flex items-center rounded-s px-2.5 py-1 text-[11px] font-semibold;
+  }
+  .dosha-pill.vata { background-color: rgba(108, 96, 148, 0.12); color: #6C6094; }
+  .dosha-pill.pitta { background-color: rgba(166, 64, 47, 0.12); color: #A6402F; }
+  .dosha-pill.kapha { background-color: rgba(47, 74, 60, 0.12); color: #2F4A3C; }
+
+  .announce {
+    @apply bg-green text-paper text-center text-[12px] tracking-wide py-2 px-4;
+  }
+}
+
+/* product card hover */
+.product-card { @apply transition-transform duration-300; }
+.product-card:hover { @apply -translate-y-1; }
